@@ -1,0 +1,41 @@
+body{
+    background: url(../images/dark_wood.png);
+}
+.jif {
+    margin: 10px;
+    background: url("../images/real_cf.png");
+    border-radius: 10px;
+    color: white;
+}
+.card {
+    float: left;
+    margin: 10px;
+}
+h1{
+    font-size: 1rem;
+}
+.rower {
+    width: auto;
+    margin: 100px;
+    margin-bottom: 0px;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.row {
+    width: auto;
+    margin: 10px;
+
+}
+#search {
+    margin: auto;
+    text-align: right;
+    
+}
+#spanner {
+    color: white;
+}
+#useradd {
+    background-color: rgb(46, 45, 45);
+    color: white;
+}
