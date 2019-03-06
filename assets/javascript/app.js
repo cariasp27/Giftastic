@@ -1,12 +1,12 @@
+// Global Variables
+// 
 let usertopic;
 let newbutton;
 let thingy;
 let queryURL;
-let pulls;
 let getajax = function (event) {
     thingy = $(event.target).attr("data-name").trim();
-    pulls = $(event.target).attr("data-pulls");
-    queryURL = "https://api.giphy.com/v1/gifs/search?api_key=58kRmpgUaY1zJfmOlS2I9t2MzX6Mz2dj&q=" + thingy + "&limit=75&offset=0&rating=PG&lang=en"
+    queryURL = "https://api.giphy.com/v1/gifs/search?api_key=58kRmpgUaY1zJfmOlS2I9t2MzX6Mz2dj&q=" + thingy + "&limit=75&offset=0&rating=PG&lang=en";
 
     $.ajax({
         url: queryURL,
@@ -18,7 +18,7 @@ let getajax = function (event) {
             var imageUrl = response.data[i].images.original_still.url;
             var aniUrl = response.data[i].images.original.url;
             var download = response.data[i].url;
-            var imgholder = $("<div class='card' style='width: 20rem;'><div class='card-body'><h1>"+ response.data[i].title +"</h1><p> Rating: "+ response.data[i].rating +"</p><a href='"+ download +"'download><i class='fas fa-arrow-down'></i></div></div>");
+            var imgholder = $("<div class='card' style='width: 20rem;'><div class='card-body'><h1>"+ response.data[i].title +"</h1><p> Rating: "+ response.data[i].rating +"</p><i class='fas fa-arrow-down'><a download='"+ download +"'></i></div></div>");
             var stillImage = $("<img class='card-img-top gif'>");
             stillImage.attr("data-state", "still")
             stillImage.attr("data-still", imageUrl);
@@ -27,7 +27,7 @@ let getajax = function (event) {
             stillImage.attr("alt", "still image");
             $(imgholder).prepend(stillImage);
             $("#images").prepend(imgholder);
-            pulls = pulls + 1;
+            
         }
     });
 }
@@ -35,7 +35,7 @@ let intmain = {
     genbuttons: function () {
         $("#dembuttons").empty();
         for (i = 0; i < topics.length; i++) {
-            newbutton = $("<button class='btn btn-lg jif' data-pulls='0' data-name='" + topics[i] + "'>" + topics[i] + "</button>");
+            newbutton = $("<button class='btn btn-lg jif' data-name='" + topics[i] + "'>" + topics[i] + "</button>");
             $("#dembuttons").append(newbutton);
         }
     },
