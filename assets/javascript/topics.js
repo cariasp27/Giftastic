@@ -4,5 +4,10 @@ let topics = [
     "Jazz",
     "Kittens",
     "Rick & Morty",
-    "Adventure Time"
+    "Adventure Time",
+    "Pandas",
+    "Archer",
+    "Bob Belcher",
+    "Family Guy",
+    "Memes"
 ]
